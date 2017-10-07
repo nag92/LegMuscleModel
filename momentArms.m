@@ -19,8 +19,10 @@ function [ ma_H, ma_K, ma_A] = momentArms( angles )
     
     ma_K(1) = -0.0098*theta_K.^2 + 0.021*theta_K + 0.028;
     ma_K(2) = -0.008*theta_K.^2 +  0.027*theta_K + 0.014;
-    ma_K(3) = -0.058*exp(-2.0*theta_K.^2)*sin(theta_K) - 0.0284;
-    ma_K(4) = -0.07*exp(-0.070*theta_K.^2)*sin(theta_K) - 0.0250;
+    complex = erfi( (1-4*knee*i)/(2*sqrt(2)) + erfi( (1+4*knee*i)/ (2*sqrt(2)));
+    complex = complex/( 4*sqrt(2)*exp(1/8))
+    ma_K(3) = -0.058*complex - 0.0584*knee;
+    ma_K(4) = -0.070*complex - 0.0250*knee;
     ma_K(5) = 0.018;
     
     ma_A = 0.053;
