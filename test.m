@@ -23,3 +23,16 @@ n2 = (d-d_thr)*atan(k_thr*(d-d_thr)) - (d-d_sat)*atan(k_sat*(d-d_sat));
 
  d = 100000
  c1*((d-d_thr)*atan(k_thr*(d-d_thr)) - (d-d_sat)*atan(k_sat*(d-d_sat))) + c2
+ 
+ 
+ %%
+ 
+ 
+ 
+ syms x
+ 
+eval(int( -0.058*exp(-2.0*x.^2)*sin(x) - 0.0284,x))
+ 
+ 
+ 
+ 
