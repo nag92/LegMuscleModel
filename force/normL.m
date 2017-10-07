@@ -1,14 +1,15 @@
-function [ output_args ] = normL( hip,knee,ankle )
+function [ output_args ] = normL( angle )
 %NORML Summary of this function goes here
 %   Detailed explanation goes here
 
-    %% find the intergral of the moment arms
-    
+    hip = angle(1);
+    knee = angle(2);
+    ankle = angle(3);
+
     % intergration constants
     C = [ 0.165,0.05,0.09,0.18,0.11,0.04,0.06,0.028,0.09]';
     % max velocity
     % shape factor
-    epsilon = [ 0.4, 0.5, 0.4, 0.2, 0.4, 0.45, 0.3, 0.5, 0.4];
     % lopt
     lopt = [0146,0.11,0.121,0.173,0.086,0.086,0.054,0.033,0.099]';
     

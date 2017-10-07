@@ -1,12 +1,11 @@
-function [ v ] = normV( angle, omega )
+function [ v_norm ] = normV( angle, omega )
 %NORMV Summary of this function goes here
 %   Detailed explanation goes here
     
     hip = angle(1);
     knee = angle(2);
     ankle = angle(3);
-    
-    
+    v = zeros(9,1);
     
     vm = [0.73,0.54,0.48,0.69,0.51,0.48,0.32,0.1,0.36]';
     
@@ -26,13 +25,13 @@ function [ v ] = normV( angle, omega )
     ma(8,3) = 0.035;
     ma(9,3) = 0.013*ankle - 0.035;
     
-    v = zeros(9,1)
-    
+       
     for ii = 1:9
         ma(ii,:)
         v(ii) = sum(ma(ii,:).*omega);
     end
     
+    v_norm = v./vm;
     
 
 end
