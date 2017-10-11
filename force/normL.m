@@ -1,4 +1,4 @@
-function [ output_args ] = normL( angle )
+function [l ] = normL( angle )
 %NORML Summary of this function goes here
 %   Detailed explanation goes here
 
